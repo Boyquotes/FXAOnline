@@ -8,3 +8,7 @@ dist
 # Mono-specific ignores
 .mono/
 data_*/
+*.import
+*.import
+*.import
+*.import
