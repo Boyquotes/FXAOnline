@@ -21,7 +21,7 @@ script = ExtResource( 1 )
 current = true
 
 [node name="Line2D" type="Line2D" parent="MainCamera"]
-points = PoolVector2Array( -320, -320, 320, -320, 320, 320, -320, 320, -320, -320 )
+points = PoolVector2Array( -352, -352, 352, -352, 352, 352, -352, 352, -352, -352 )
 width = 5.0
 
 [node name="DrawGrid" type="Node2D" parent="."]
