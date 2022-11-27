@@ -14,7 +14,7 @@ var _handlers = {
 	Global.ServerPacketID.Logged		   : "parse_logged",
 	Global.ServerPacketID.MyCharacter	   : "parse_my_character",
 	Global.ServerPacketID.RenderItem 	   : "parse_render_item",
-	Global.ServerPacketID.RemoveArea	   : "parse_remove_area"
+	Global.ServerPacketID.RemoveItem	   : "parse_remove_item"
 }
 
 func _ready() -> void:
@@ -77,14 +77,11 @@ func parse_render_item(data:StreamPeerBuffer):
 	
 	get_current_scene().render_item(x, y, grh_id)
 	
-func parse_remove_area(data:StreamPeerBuffer):
-	var size = data.get_u8()
-	
-	for i in range(size):
-		var x = data.get_16()
-		var y = data.get_16()
+func parse_remove_item(data:StreamPeerBuffer): 
+	var x = data.get_16()
+	var y = data.get_16()
 		
-		get_current_scene().destory_area(x, y)	
+	get_current_scene().remove_item(x, y)	
 	
 func get_current_scene():
 	return get_parent().current_scene

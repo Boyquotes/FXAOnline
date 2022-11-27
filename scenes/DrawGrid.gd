@@ -17,7 +17,7 @@ func _process(__):
 	update()
 
 func _draw(): 
-	for y in range(100 / 10):
-		for x in range(100 /10): 
+	for y in range(100 / grid_size):
+		for x in range(100 /grid_size): 
 			draw_rect(Rect2(x * tile_size * grid_size, y * tile_size * grid_size,  tile_size * grid_size, tile_size * grid_size), Color.navyblue, false, 1, true)	 
-			draw_string(font, Vector2(x * tile_size * grid_size, (y * tile_size * grid_size) + 20), "[%d-%d]" % [x, y], Color.white)
+			draw_string(font, Vector2(x * tile_size * grid_size, (y * tile_size * grid_size) + 20), "%d" % (x + y * grid_size), Color.white)

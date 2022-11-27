@@ -4,6 +4,7 @@ class_name MapBase
 export (Array, int) var triggers
 export (Array, int) var obstacles 
 
+const items = {}
 
 func add_character(character):
 	$Overlap/Entities.add_child(character)
@@ -11,9 +12,9 @@ func add_character(character):
 func is_tile_passable(x, y):
 	return obstacles[x + y * Global.MAP_WIDTH] == 0
 
-func add_item(x:int, y:int, grh_id:int) -> Node2D: 
-	if !Global.grh_defs.has(grh_id): return null
-	if !Global.grh_defs[grh_id].has("file_num"): return null
+func add_item(x:int, y:int, grh_id:int) -> void: 
+	if !Global.grh_defs.has(grh_id): return
+	if !Global.grh_defs[grh_id].has("file_num"): return
 	
 	var region = Global.grh_defs[grh_id].region
 	var file_id = Global.grh_defs[grh_id].file_num
@@ -33,4 +34,11 @@ func add_item(x:int, y:int, grh_id:int) -> Node2D:
 		sprite.offset = Vector2(0, -sprite.region_rect.size.y / 2)
 		get_node("Overlap/Environment").add_child(sprite)
 		
-	return sprite
+	items[Vector2(x, y)] = sprite
+	
+func remove_item(x:int, y:int) -> void:
+	var key = Vector2(x, y)
+	
+	if items.has(key):
+		items[key].queue_free()
+		items.erase(key)

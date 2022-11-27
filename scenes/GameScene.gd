@@ -99,13 +99,13 @@ func render_item(x:int, y:int, grh_id:int) -> void:
 	if item_node != null:
 		items.append(item_node)
 		
-func destory_area(x:int, y:int) -> void:
-	return
+func remove_item(x:int, y:int) -> void:
+	get_current_map().remove_item(x, y)
 
-func get_current_map():
+func get_current_map() -> MapBase:
 	if get_node("CurrentMap").get_child_count() == 0:
 		return null
-	return get_node("CurrentMap").get_child(0)
+	return get_node("CurrentMap").get_child(0) as MapBase
 	
 func _process(delta: float) -> void: 
 	_update_movement(delta)

@@ -44,7 +44,8 @@ enum ServerPacketID {
 	ChatConsole,
 	SwitchMap,
 	RenderItem,
-	RemoveArea
+	RemoveArea,
+	RemoveItem
 }
 
 enum ClientPacketID {
