@@ -1,0 +1,198 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://maps/Map1.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/LoginScene.gd" type="Script" id=2]
+[ext_resource path="res://maps/Map2.tscn" type="PackedScene" id=3]
+[ext_resource path="res://maps/Map34.tscn" type="PackedScene" id=4]
+[ext_resource path="res://maps/Map160.tscn" type="PackedScene" id=5]
+[ext_resource path="res://maps/Map112.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/textures/ui/ArkanaLook.png" type="Texture" id=7]
+[ext_resource path="res://assets/textures/ui/BTN OK.png" type="Texture" id=8]
+[ext_resource path="res://assets/fonts/CascadiaCode.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://assets/music/login.mp3" type="AudioStream" id=10]
+
+[sub_resource type="DynamicFont" id=2]
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=3]
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 9 )
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 7 )
+region = Rect2( 0, 491, 21, 21 )
+
+[sub_resource type="DynamicFont" id=4]
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 9 )
+
+[node name="LoginScene" type="Node"]
+script = ExtResource( 2 )
+map_scenes = [ ExtResource( 1 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 6 ), ExtResource( 5 ) ]
+
+[node name="MapContainer" type="Node2D" parent="."]
+position = Vector2( -1016, -1020 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="UI" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="FondoColor" type="ColorRect" parent="UI"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -232.5
+margin_top = -97.5
+margin_right = 232.5
+margin_bottom = 97.5
+color = Color( 0.443137, 0.32549, 0.160784, 1 )
+
+[node name="BtnConnect" type="TextureButton" parent="UI/FondoColor"]
+margin_left = 28.0
+margin_top = 136.0
+margin_right = 199.0
+margin_bottom = 174.0
+texture_normal = ExtResource( 8 )
+expand = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Label" type="Label" parent="UI/FondoColor/BtnConnect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 2 )
+text = "Conectar"
+align = 1
+valign = 1
+
+[node name="BtnRegister" type="TextureButton" parent="UI/FondoColor"]
+margin_left = 304.5
+margin_top = 93.5
+margin_right = 436.5
+margin_bottom = 131.5
+texture_normal = ExtResource( 8 )
+expand = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Label" type="Label" parent="UI/FondoColor/BtnRegister"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 2 )
+text = "Crear PJ"
+align = 1
+valign = 1
+
+[node name="BtnExit" type="TextureButton" parent="UI/FondoColor"]
+margin_left = 304.5
+margin_top = 135.5
+margin_right = 436.5
+margin_bottom = 173.5
+texture_normal = ExtResource( 8 )
+expand = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Label" type="Label" parent="UI/FondoColor/BtnExit"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 2 )
+text = "Salir"
+align = 1
+valign = 1
+
+[node name="BtnDiscord" type="TextureButton" parent="UI/FondoColor"]
+margin_left = 304.5
+margin_top = 29.5
+margin_right = 436.5
+margin_bottom = 67.5
+texture_normal = ExtResource( 8 )
+expand = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Label" type="Label" parent="UI/FondoColor/BtnDiscord"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 2 )
+text = "Discord"
+align = 1
+valign = 1
+
+[node name="UserNameLabel" type="Label" parent="UI/FondoColor"]
+margin_left = 16.5
+margin_top = 0.5
+margin_right = 209.5
+margin_bottom = 25.5
+custom_fonts/font = SubResource( 3 )
+text = "Nombre del personaje"
+align = 1
+valign = 1
+
+[node name="UserName" type="LineEdit" parent="UI/FondoColor"]
+margin_left = 32.5
+margin_top = 29.5
+margin_right = 187.5
+margin_bottom = 53.5
+align = 1
+
+[node name="UserPasswordLabel" type="Label" parent="UI/FondoColor"]
+margin_left = 53.5
+margin_top = 68.0
+margin_right = 165.5
+margin_bottom = 93.0
+custom_fonts/font = SubResource( 3 )
+text = "Contraseña"
+align = 1
+valign = 1
+
+[node name="UserPassword" type="LineEdit" parent="UI/FondoColor"]
+margin_left = 32.5
+margin_top = 93.5
+margin_right = 187.5
+margin_bottom = 117.5
+align = 1
+secret = true
+
+[node name="Borde" type="NinePatchRect" parent="UI/FondoColor"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = SubResource( 1 )
+patch_margin_left = 9
+patch_margin_top = 9
+patch_margin_right = 9
+patch_margin_bottom = 9
+
+[node name="ToggleMusic" type="CheckButton" parent="UI"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -40.0
+margin_right = 224.0
+custom_fonts/font = SubResource( 4 )
+pressed = true
+text = "Musica de inicio"
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+
+[connection signal="pressed" from="UI/FondoColor/BtnConnect" to="." method="_on_BtnConnect_pressed"]
+[connection signal="pressed" from="UI/FondoColor/BtnRegister" to="." method="_on_BtnRegister_pressed"]
+[connection signal="pressed" from="UI/FondoColor/BtnExit" to="." method="_on_BtnExit_pressed"]
+[connection signal="toggled" from="UI/ToggleMusic" to="." method="_on_ToggleMusic_toggled"]
