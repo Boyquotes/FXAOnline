@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/lluviainst.wav-e2d0d16068745108a6657db17db67387.sample"
+
+[deps]
+
+source_file="res://assets/legacy/wav/lluviainst.wav"
+dest_files=[ "res://.import/lluviainst.wav-e2d0d16068745108a6657db17db67387.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

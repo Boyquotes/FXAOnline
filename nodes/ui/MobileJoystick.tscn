@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://nodes/ui/MobileJoystick.gd" type="Script" id=1]
+[ext_resource path="res://assets/textures/ui/JoystickPack.png" type="Texture" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 51.0098
+
+[node name="MobileJoystick" type="Area2D"]
+modulate = Color( 1, 1, 1, 0.619608 )
+monitoring = false
+monitorable = false
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="BigCircle" type="Sprite" parent="."]
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 774, 436, 208, 208 )
+
+[node name="SmallCircle" type="Sprite" parent="BigCircle"]
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 132, 741, 140, 141 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
