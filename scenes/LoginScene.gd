@@ -1,6 +1,6 @@
 extends Node
 
-const SERVER_IP = "127.0.0.1"
+const SERVER_IP = "192.168.0.245"
 const SERVER_PORT = 3030
 
 const CREAPJ_SCENE =  preload("res://scenes/CrearPJScene.tscn") 
